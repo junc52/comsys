@@ -29,7 +29,7 @@ int inode_iget(struct unixfilesystem *fs, int inumber, struct inode *inp) {
     }
   }
 
-  *inp = fs->inode_table[inumber];
+  *inp = fs->inode_table[inumber - 1];
   return 0;  
 }
 
@@ -50,6 +50,7 @@ int inode_indexlookup(struct unixfilesystem *fs, struct inode *inp, int blockNum
     return -1;
   }
 
+  // TODO : check the type of diskBlockNum
   uint16_t diskBlockNum = inp->i_addr[blockNum];
   if (diskBlockNum == 0) {
     fprintf(stderr, "Block not allocated\n");
