@@ -45,11 +45,6 @@ int inode_indexlookup(struct unixfilesystem *fs, struct inode *inp, int blockNum
     return -1;
   }
 
-  if (inp->i_addr == NULL) {
-    fprintf(stderr, "Fail to read device addresses\n");
-    return -1;
-  }
-
   // TODO : check the type of diskBlockNum
   uint16_t diskBlockNum = inp->i_addr[blockNum];
   if (diskBlockNum == 0) {
