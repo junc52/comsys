@@ -81,6 +81,8 @@ int main(int argc, char *argv[]) {
 
   int err = diskimg_close(fd);
   if (err < 0) fprintf(stderr, "Error closing %s\n", argv[1]);
+  free(fs->inode_table);
+  fs->inode_table = NULL;
   free(fs);
   exit(EXIT_SUCCESS);
   return 0;

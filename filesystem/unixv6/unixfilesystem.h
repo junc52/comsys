@@ -4,6 +4,7 @@
 /**
  * Include the definitions taken from the Unix sources. 
  */
+#include <stdlib.h>
 
 #include "filsys.h"     // Superblock definition
 #include "ino.h"        // Inode definition
@@ -28,6 +29,8 @@
 struct unixfilesystem {
   int dfd; // Handle from the diskimg module to read the diskimg.
   struct filsys superblock;  // The superblock read from the diskimage.
+  struct inode* inode_table; // The inode table read from the diskimage.
+  size_t num_inodes;
 };
 
 struct unixfilesystem *unixfilesystem_init(int fd);

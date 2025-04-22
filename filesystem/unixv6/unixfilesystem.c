@@ -41,5 +41,8 @@ struct unixfilesystem *unixfilesystem_init(int dfd) {
     return NULL;
   }
 
+  fs->inode_table = NULL;
+  fs->num_inodes = fs->superblock.s_isize * (DISKIMG_SECTOR_SIZE / sizeof(struct inode));
+
   return fs;
 }

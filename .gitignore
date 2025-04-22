@@ -1,0 +1,20 @@
+# Object files and static libs
+*.o
+*.a
+
+# Executables
+diskimageaccess
+
+# Dependency files from -MMD
+*.d
+
+# Editor/OS junk
+*~
+*.swp
+.DS_Store
+
+# VSCode settings
+.vscode/
+
+# Build directories
+/build/
