@@ -36,3 +36,14 @@ diskimageaccess
 *.lib
 *.app
 *.dSYM/
+
+# === Bazel ===
+bazel-*
+bazel-bin/
+bazel-out/
+bazel-testlogs/
+bazel-cache/
+bazel-logs/
+
+# If using bzlmod (Bazel 8+)
+MODULE.bazel.lock
